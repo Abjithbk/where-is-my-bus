@@ -1,10 +1,16 @@
-
+import Signup from "./components/Signup";
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 
 function App() {
   return (
-    <div>
-      <h1 className="text-red-500">Hello world</h1>
-    </div>
+    <>
+    <Router basename="/">
+      <Routes>
+        <Route path="/Signup" element={ <Signup />} />
+      </Routes>
+      
+    </Router>
+    </>
   );
 }
 
