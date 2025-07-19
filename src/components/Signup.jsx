@@ -164,7 +164,7 @@ const Signup = () => {
             <div>
               <button
                 type="submit"
-                 className="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold text-white shadow-sm "
+                 className="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold bg-blue-500 text-white shadow-sm "
               >
               Signup
               </button>
