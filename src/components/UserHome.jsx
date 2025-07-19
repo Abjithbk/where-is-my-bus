@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
-
+import {useNavigate} from 'react-router-dom'
 const UserHome = () => {
   const [openMenu,setOpenMenu] = useState(null);
+
+  const navigate = useNavigate();
   return (
    <div className="min-h-screen bg-gray-100 p-4">
       
@@ -18,7 +20,9 @@ const UserHome = () => {
         }`}
       >
         <div className="py-1">
-          <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+          <p onClick={() => {
+            navigate("/TicketBooking")
+          }} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
             Book Ticket
           </p>
           <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
@@ -32,10 +36,14 @@ const UserHome = () => {
           )
         }
         <div className="flex gap-2">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+          <button onClick={() => {
+            navigate("/Signup")
+          }} className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
             Signup
           </button>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+          <button onClick={() => {
+            navigate("/Login")
+          }} className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
             Login
           </button>
         </div>
@@ -59,8 +67,20 @@ const UserHome = () => {
             Search
           </button>
           <button className="bg-green-600 text-white px-5 py-3 rounded-md shadow hover:bg-green-700 transition">
-            Near My Stop
+            Bus stops near me
           </button>
+         <label className="flex items-center gap-3 text-sm mt-2 sm:mt-0">
+          <span>Show bus for next 1 hr arrivals</span>
+          <div className="relative">
+            <input
+              type="checkbox"
+              className="accent-blue-600"
+            />
+            {/* <div className="w-10 h-5 bg-gray-300 rounded-full shadow-inner transition-all duration-300 ease-in-out peer-checked:bg-blue-600"></div>
+            <div className="absolute left-0 top-0 w-5 h-5 bg-white border rounded-full shadow transform transition-transform duration-300 ease-in-out peer-checked:translate-x-full"></div> */}
+          </div>
+        </label>
+
         </div>
       </div>
 
