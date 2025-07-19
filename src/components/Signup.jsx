@@ -1,6 +1,7 @@
 import React from 'react'
-
+import {useNavigate} from 'react-router-dom'
 const Signup = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -147,19 +148,6 @@ const Signup = () => {
                    
                 /> Staff
                 </label>
-                <label className='mr-4'>
-                  <input
-                  id="admin"
-                  name="profile-type"
-                  type="radio"
-                  required
-                  value="admin"
-                  
-                  
-                /> Admin
-                </label>
-                
-           
             </div>
             <div>
               <button
@@ -173,7 +161,9 @@ const Signup = () => {
 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
             Already a member?{' '}
-            <span  className="font-semibold text-indigo-600 hover:text-indigo-500 cursor-pointer">
+            <span onClick={() => {
+              navigate("/Login")
+            }} className="font-semibold text-indigo-600 hover:text-indigo-500 cursor-pointer">
                  Sign in
             </span>
           </p>

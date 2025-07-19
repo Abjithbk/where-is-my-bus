@@ -1,6 +1,7 @@
 import React from "react";
-
+import {useNavigate} from 'react-router-dom'
 const Login = () => {
+  const navigate = useNavigate()
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -66,8 +67,10 @@ const Login = () => {
         </form>
 
         <p className="mt-10 text-center text-sm/6 text-gray-500">
-          New member?{" "}
-          <span className="font-semibold text-indigo-600 hover:text-indigo-500 cursor-pointer">
+          Are you a New member?{" "}
+          <span onClick={() => {
+            navigate("/Signup")
+          }} className="font-semibold text-indigo-600 hover:text-indigo-500 cursor-pointer">
             Signup
           </span>
         </p>
